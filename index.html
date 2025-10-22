@@ -28,10 +28,284 @@
 
         <div class="actions">
             <button class="btn" aria-label="Sign in">Sign in</button>
-            <button class="icon-btn icon-hamburger" aria-label="Open menu" id="openBtn" aria-controls="sidebar" aria-expanded="false">
-                <!-- hamburger -->
-                <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-            </button>
+            <!doctype html>
+            <html lang="en">
+            <head>
+                <meta charset="utf-8" />
+                <meta name="viewport" content="width=device-width,initial-scale=1" />
+                <title>Products — MyApp</title>
+
+                <!-- minimal styles for product cards -->
+                <style>
+                    :root{
+                        --bg:#f6f7fb;
+                        --card:#fff;
+                        --muted:#6b7280;
+                        --accent:#0f62fe;
+                        --radius:10px;
+                        --gap:1rem;
+                        font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+                    }
+                    html,body{height:100%}
+                    body{
+                        margin:0;
+                        background:var(--bg);
+                        color:#0b1220;
+                        -webkit-font-smoothing:antialiased;
+                        -moz-osx-font-smoothing:grayscale;
+                        padding:2rem;
+                        box-sizing:border-box;
+                    }
+
+                    main{max-width:1200px;margin:0 auto}
+
+                    h1{margin:0 0 1rem;font-size:1.5rem}
+
+                    .grid{
+                        display:grid;
+                        gap:var(--gap);
+                        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+                    }
+
+                    .card{
+                        background:var(--card);
+                        border-radius:var(--radius);
+                        box-shadow:0 6px 18px rgba(9,18,28,0.06);
+                        overflow:hidden;
+                        display:flex;
+                        flex-direction:column;
+                        transition:transform .15s ease,box-shadow .15s ease;
+                        min-height:100%;
+                    }
+                    .card:focus-within,
+                    .card:hover{transform:translateY(-6px);box-shadow:0 12px 28px rgba(9,18,28,0.08)}
+
+                    .card img{
+                        width:100%;
+                        height:150px;
+                        object-fit:cover;
+                        display:block;
+                        background:#e9eefb;
+                    }
+
+                    .card-body{
+                        padding:0.85rem;
+                        display:flex;
+                        flex-direction:column;
+                        gap:0.5rem;
+                        flex:1;
+                    }
+
+                    .title{
+                        font-size:1rem;
+                        margin:0;
+                        font-weight:600;
+                    }
+                    .desc{
+                        margin:0;
+                        color:var(--muted);
+                        font-size:.9rem;
+                        flex:1;
+                    }
+
+                    .meta{
+                        display:flex;
+                        justify-content:space-between;
+                        align-items:center;
+                        gap:.5rem;
+                        margin-top:.5rem;
+                    }
+
+                    .price{
+                        font-weight:700;
+                        color:#0b1220;
+                    }
+
+                    .actions{display:flex;gap:.5rem}
+
+                    .btn{
+                        appearance:none;
+                        border:0;
+                        background:var(--accent);
+                        color:#fff;
+                        padding:.5rem .75rem;
+                        border-radius:8px;
+                        font-weight:600;
+                        cursor:pointer;
+                        font-size:.9rem;
+                    }
+
+                    .secondary{
+                        background:transparent;
+                        border:1px solid rgba(11,18,32,.06);
+                        color:var(--muted);
+                        padding:.45rem .65rem;
+                        border-radius:8px;
+                    }
+
+                    @media (min-width:900px){
+                        .card img{height:140px}
+                    }
+                </style>
+            </head>
+            <body>
+                <main>
+                    <h1>Products</h1>
+
+                    <section class="grid" aria-label="Product list">
+                        <article class="card" role="article" aria-label="Product 1 - Wireless Headphones">
+                            <img src="https://via.placeholder.com/640x360?text=Headphones" alt="Wireless Headphones">
+                            <div class="card-body">
+                                <h2 class="title">Wireless Headphones</h2>
+                                <p class="desc">Comfortable over-ear headphones with active noise cancellation and 30h battery life.</p>
+                                <div class="meta">
+                                    <div class="price">$89.00</div>
+                                    <div class="actions">
+                                        <button class="btn" aria-label="Add Wireless Headphones to cart">Add</button>
+                                        <button class="secondary" aria-label="View Wireless Headphones">View</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="card" role="article" aria-label="Product 2 - Smart Watch">
+                            <img src="https://via.placeholder.com/640x360?text=Smart+Watch" alt="Smart Watch">
+                            <div class="card-body">
+                                <h2 class="title">Smart Watch</h2>
+                                <p class="desc">Lightweight smartwatch with heart-rate monitoring, GPS and customizable faces.</p>
+                                <div class="meta">
+                                    <div class="price">$129.00</div>
+                                    <div class="actions">
+                                        <button class="btn" aria-label="Add Smart Watch to cart">Add</button>
+                                        <button class="secondary" aria-label="View Smart Watch">View</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="card" role="article" aria-label="Product 3 - Portable Speaker">
+                            <img src="https://via.placeholder.com/640x360?text=Speaker" alt="Portable Speaker">
+                            <div class="card-body">
+                                <h2 class="title">Portable Speaker</h2>
+                                <p class="desc">Water-resistant Bluetooth speaker with rich bass and 12 hours playtime.</p>
+                                <div class="meta">
+                                    <div class="price">$49.00</div>
+                                    <div class="actions">
+                                        <button class="btn" aria-label="Add Portable Speaker to cart">Add</button>
+                                        <button class="secondary" aria-label="View Portable Speaker">View</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="card" role="article" aria-label="Product 4 - Fitness Band">
+                            <img src="https://via.placeholder.com/640x360?text=Fitness+Band" alt="Fitness Band">
+                            <div class="card-body">
+                                <h2 class="title">Fitness Band</h2>
+                                <p class="desc">Slim fitness band with sleep tracking, step counter and smartphone notifications.</p>
+                                <div class="meta">
+                                    <div class="price">$39.00</div>
+                                    <div class="actions">
+                                        <button class="btn" aria-label="Add Fitness Band to cart">Add</button>
+                                        <button class="secondary" aria-label="View Fitness Band">View</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="card" role="article" aria-label="Product 5 - Noise-Isolating Earbuds">
+                            <img src="https://via.placeholder.com/640x360?text=Earbuds" alt="Noise-Isolating Earbuds">
+                            <div class="card-body">
+                                <h2 class="title">Noise-Isolating Earbuds</h2>
+                                <p class="desc">Compact earbuds with passive noise isolation and secure fit for workouts.</p>
+                                <div class="meta">
+                                    <div class="price">$29.00</div>
+                                    <div class="actions">
+                                        <button class="btn" aria-label="Add Earbuds to cart">Add</button>
+                                        <button class="secondary" aria-label="View Earbuds">View</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="card" role="article" aria-label="Product 6 - USB-C Charger">
+                            <img src="https://via.placeholder.com/640x360?text=Charger" alt="USB-C Charger">
+                            <div class="card-body">
+                                <h2 class="title">USB-C Charger</h2>
+                                <p class="desc">Fast 30W USB-C wall charger with compact design and foldable prongs.</p>
+                                <div class="meta">
+                                    <div class="price">$19.00</div>
+                                    <div class="actions">
+                                        <button class="btn" aria-label="Add USB-C Charger to cart">Add</button>
+                                        <button class="secondary" aria-label="View USB-C Charger">View</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="card" role="article" aria-label="Product 7 - Laptop Sleeve">
+                            <img src="https://via.placeholder.com/640x360?text=Sleeve" alt="Laptop Sleeve">
+                            <div class="card-body">
+                                <h2 class="title">Laptop Sleeve</h2>
+                                <p class="desc">Neoprene laptop sleeve that fits up to 15" laptops with soft inner lining.</p>
+                                <div class="meta">
+                                    <div class="price">$24.00</div>
+                                    <div class="actions">
+                                        <button class="btn" aria-label="Add Laptop Sleeve to cart">Add</button>
+                                        <button class="secondary" aria-label="View Laptop Sleeve">View</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="card" role="article" aria-label="Product 8 - Wireless Mouse">
+                            <img src="https://via.placeholder.com/640x360?text=Mouse" alt="Wireless Mouse">
+                            <div class="card-body">
+                                <h2 class="title">Wireless Mouse</h2>
+                                <p class="desc">Ergonomic wireless mouse with adjustable DPI and long battery life.</p>
+                                <div class="meta">
+                                    <div class="price">$22.00</div>
+                                    <div class="actions">
+                                        <button class="btn" aria-label="Add Wireless Mouse to cart">Add</button>
+                                        <button class="secondary" aria-label="View Wireless Mouse">View</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="card" role="article" aria-label="Product 9 - Portable SSD">
+                            <img src="https://via.placeholder.com/640x360?text=Portable+SSD" alt="Portable SSD">
+                            <div class="card-body">
+                                <h2 class="title">Portable SSD 512GB</h2>
+                                <p class="desc">High-speed portable SSD with USB-C for fast transfers and compact size.</p>
+                                <div class="meta">
+                                    <div class="price">$79.00</div>
+                                    <div class="actions">
+                                        <button class="btn" aria-label="Add Portable SSD to cart">Add</button>
+                                        <button class="secondary" aria-label="View Portable SSD">View</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="card" role="article" aria-label="Product 10 - Camera Tripod">
+                            <img src="https://via.placeholder.com/640x360?text=Tripod" alt="Camera Tripod">
+                            <div class="card-body">
+                                <h2 class="title">Camera Tripod</h2>
+                                <p class="desc">Lightweight aluminum tripod with quick-release plate and adjustable height.</p>
+                                <div class="meta">
+                                    <div class="price">$34.00</div>
+                                    <div class="actions">
+                                        <button class="btn" aria-label="Add Camera Tripod to cart">Add</button>
+                                        <button class="secondary" aria-label="View Camera Tripod">View</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </section>
+                </main>
+            </body>
+            </html>
         </div>
     </header>
 
